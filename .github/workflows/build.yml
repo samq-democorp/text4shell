@@ -19,4 +19,4 @@ jobs:
         java-version: '11'
         distribution: 'adopt'
     - name: Build & deploy with Maven
-      run: mvn deploy
+      run: mvn deploy -DaltDeploymentRepository=github::default::https://maven.pkg.github.com/${{github.repository}}
