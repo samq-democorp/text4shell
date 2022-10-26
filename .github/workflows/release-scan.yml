@@ -1,0 +1,13 @@
+name: Mend UA Release Scan
+
+on:
+  push:
+    branches:
+    - '**release**'
+
+jobs:
+  call-java-prioritize:
+    uses: samq-democorp/whitesource-config/.github/workflows/java-prioritize.yml@main
+    with:
+      mvn-cmd: 'mvn clean install'
+    secrets: inherit
